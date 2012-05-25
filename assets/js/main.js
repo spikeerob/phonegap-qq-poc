@@ -4,7 +4,7 @@
  */
 $(document).ready(function() {
     $('#qqform').submit(function(){
-        $.mobile.changePage('#fetch', {transition: 'slideup'});
+        $.mobile.changePage('#fetch', {transition: 'pop', role: 'dialog'});
         return false;
     });
 });
@@ -15,7 +15,7 @@ $(document).bind('pagechange', function(){
         switch($.mobile.activePage.attr('id')) {
             case 'fetch':
                 $('#values').html($("form#qqform").serialize());
-                setTimeout(function(){$.mobile.changePage('#result', {transition: 'slidedown'}); }, 3000);
+                setTimeout(function(){$.mobile.changePage('#result', {transition: 'fade'}); }, 3000);
                 break;
         }
     }
