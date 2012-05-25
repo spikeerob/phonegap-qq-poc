@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<widget xmlns		= "http://www.w3.org/ns/widgets"
+	xmlns:gap	= "http://phonegap.com/ns/1.0"
+	id		= "uk.co.caci.qq.poc"
+	version 	= "1.0.0">
+
+	<name>PhoneGap: Quick Quote Proof of Concept</name>
+
+	<description>
+		A Quick Quote implementation built using PhoneGap
+	</description>
+
+	<author href="http://spikeerob.github.com"
+		email="">
+		Rob Brand
+	</author>
+
+	<icon src="icon.png" gap:role="default" />
+
+	<feature name="http://api.phonegap.com/1.0/network"/>
+
+	<preference name="orientation" value="portrait" />
+</widget>

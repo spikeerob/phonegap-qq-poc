@@ -1,0 +1,10 @@
+/* overwite jquery styles */
+.ui-header .ui-title, .ui-footer .ui-title {
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+.ui-grid-a .ui-input-text {
+    width: 92%;
+    margin
+}

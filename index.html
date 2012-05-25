@@ -1,0 +1,111 @@
+<!doctype html>
+<html class="ui-mobile">
+	<head>
+		<meta name="viewport" content="initial-scale=1.0, user-scalable=no, width=device-width" />
+		<title>PhoneGap: QuickQuote Proof of Concept</title>
+		<link rel="stylesheet" href="assets/css/jquery.mobile-1.1.0.min.css" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+        
+		<script src="phonegap.js" type="text/javascript" charset="utf-8"></script>
+		
+        <script src="assets/js/jquery-1.7.1.min.js"></script>
+        <script src="assets/js/jquery.mobile-1.1.0.min.js"></script>
+        <script src="assets/js/main.js"></script>
+		
+	</head>
+	<body>
+        
+        <div data-role="page" id="form" data-url="form" class="ui-page-active">
+
+            <div data-role="header">
+                <h1>Direct Line Car QuickQuote</h1>
+            </div>
+
+            <div data-role="content">
+                <form id="qqform" action="" method="post">
+                    
+                    <div class="ui-grid-a">
+                        
+                        <div class="ui-block-a">
+                            <fieldset data-role="controlgroup" data-type="horizontal">
+                                <legend>Gender:</legend>
+                                    <input type="radio" name="gender" id="gender-m" value="m" />
+                                    <label for="gender-m">Male</label>
+                                    <input type="radio" name="gender" id="gender-f" value="f" />
+                                    <label for="gender-f">Female</label>
+                            </fieldset>
+                        </div>
+                        
+                        <div class="ui-block-b">
+                            <label for="yearofbirth">Year of birth:</label>
+                            <input type="text" name="yearofbirth" id="yearofbirth" />
+                        </div>
+                        
+                        <div class="ui-block-a">
+                            <label for="yearofbirth">Postcode:</label>
+                            <input type="text" name="postcode" id="postcode" />
+                        </div>
+                        
+                        <div class="ui-block-b">
+                            <label for="yearofbirth">Car registration:</label>
+                            <input type="text" name="carreg" id="carreg" />
+                        </div>
+                        
+                    </div>
+                    
+                    <label for="noclaims">No Claim Discount:</label>
+                    <select name="noclaims" id="noclaims">
+                        <option value="">Please select</option>
+                        <option value="0">0</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9 or more</option>
+                    </select>
+                    
+                    <input type="submit" value="Get your QuickQuote" data-theme="b" />
+                    
+                </form>
+            </div>
+
+        </div>
+        
+        <div data-role="page" id="fetch" data-url="fetch">
+            
+            <div data-role="header">
+                <h1>Direct Line Car QuickQuote</h1>
+            </div>
+
+            <div data-role="content">
+                Fetching....
+                
+                <h3>Values:</h3>
+                <p id="values"></p>
+            </div>
+            
+        </div>
+        
+        <div data-role="page" id="result" data-url="result">
+            
+            <div data-role="header">
+                <h1>Direct Line Car QuickQuote</h1>
+            </div>
+
+            <div data-role="content">
+                Result: £110
+            </div>
+            
+        </div>
+        
+        <div class="ui-loader ui-corner-all ui-body-a ui-loader-default">
+            <span class="ui-icon ui-icon-loading"></span>
+            <h1>loading</h1>
+        </div>
+        
+	</body>
+</html>
