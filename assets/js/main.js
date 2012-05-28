@@ -61,8 +61,11 @@ $(document).bind('pagechange', function(){
 
 
                 var contactSuccess = function(contacts) {
-                    console.log(contacts);
-                    $('#robs').text($.toJSON(contacts));
+                    var robs = [];
+                    $(contacts).each(function() {
+                        robs.push(this.displayName);
+                    });
+                    $('#robs').text(robs.join(', '));
                 };
 
                 var contactError = function() {
