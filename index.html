@@ -10,6 +10,7 @@
 		
         <script src="assets/js/jquery-1.7.1.min.js"></script>
         <script src="assets/js/jquery.mobile-1.1.0.min.js"></script>
+        <script src="assets/js/jquery.json-2.3.min.js"></script>
         <script src="assets/js/main.js"></script>
 		
 	</head>
@@ -60,6 +61,8 @@
                     <input name="submit" type="submit" value="Get your QuickQuote" data-theme="b" />
                     
                 </form>
+                
+                <a href="#data">Phone data</a>
             </div>
 
         </div>
@@ -89,5 +92,22 @@
             
         </div>
         
+        <div data-role="page" id="data" data-url="data">
+            
+            <div data-role="header">
+                <h1>Debug Data</h1>
+            </div>
+        
+            <div data-role="content">
+                Connection: <span id="connection"></span><br/>
+                X-axis: <span id="xaxis"></span><br/>
+                Y-axis: <span id="yaxis"></span><br/>
+                Z-axis: <span id="zaxis"></span><br/>
+                Robs you know: <span id="robs"></span><br/>
+                Latitude: <span id="lat"></span><br/>
+                Longitude: <span id="long"></span><br/>
+                Altitude: <span id="alt"></span><br/>
+            </div>
+        </div>
 	</body>
 </html>

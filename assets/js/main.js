@@ -30,6 +30,68 @@ $(document).bind('pagechange', function(){
                     }
                 })
                 break;
+             
+            case 'data':
+                var networkState = navigator.network.connection.type;
+
+                var states = {};
+                states[Connection.UNKNOWN]  = 'Unknown connection';
+                states[Connection.ETHERNET] = 'Ethernet connection';
+                states[Connection.WIFI]     = 'WiFi connection';
+                states[Connection.CELL_2G]  = 'Cell 2G connection';
+                states[Connection.CELL_3G]  = 'Cell 3G connection';
+                states[Connection.CELL_4G]  = 'Cell 4G connection';
+                states[Connection.NONE]     = 'No network connection';
+
+                $('#connection').text(states[networkState]);
+                
+                var accelSuccess = function(acceleration) {
+                    $('#xaxis').text(acceleration.x);
+                    $('#yaxis').text(acceleration.y);
+                    $('#zaxis').text(acceleration.z);
+                }
+
+                var accelError = function() {
+                    alert('accelError!');
+                }
+
+                var accelOptions = {frequency: 500};
+                navigator.accelerometer.watchAcceleration(accelSuccess, accelError, accelOptions);
+
+
+
+                var contactSuccess = function(contacts) {
+                    console.log(contacts);
+                    $('#robs').text($.toJSON(contacts));
+                };
+
+                var contactError = function() {
+                    alert('contactError!');
+                };
+
+                // find all contacts with 'Bob' in any name field
+                var contactOptions = new ContactFindOptions();
+                contactOptions.filter = "Rob";
+                contactOptions.multiple = true;
+                var fields = ["displayName", "name"];
+                navigator.contacts.find(fields, contactSuccess, contactError, contactOptions);
+
+                
+                
+                var geoSuccess = function(position) {
+                    $('#lat').text(position.coords.latitude);
+                    $('#long').text(position.coords.longitude);
+                    $('#alt').text(position.coords.altitude);
+                }
+
+                var geoError = function() {
+                    alert('geoError!');
+                }
+                
+                var geoOptions = { frequency: 1000 };
+                navigator.geolocation.watchPosition(geoSuccess, geoError, geoOptions);
+
+                break;
         }
     }
 });
