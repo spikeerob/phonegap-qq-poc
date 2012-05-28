@@ -4,7 +4,7 @@
  */
 $(document).ready(function() {
     $('#qqform').submit(function(){
-        $.mobile.changePage('#fetch', {transition: 'fade'});
+        $.mobile.changePage('#fetch', {transition: 'fade', changeHash: false});
         return false;
     });
     
@@ -24,17 +24,10 @@ $(document).bind('pagechange', function(){
                     type: 'post',
                     data: $("form#qqform").serialize(),
                     dataType: 'json',
-                    success: function(data, textStatus, jqXHR) {
-                        console.log(textStatus);
+                    success: function(data) {
                         $('#quoteString').text(data.quoteString);
                         $.mobile.changePage('#result', {transition: 'fade'});
-                    },
-                    error: function(jqXHR, textStatus, errorThrown) {
-                        console.log(textStatus);
-                        console.log(errorThrown);
-                        console.log(errorThrown.message, errorThrown.stack);
                     }
-                    
                 })
                 break;
         }
